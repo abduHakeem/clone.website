@@ -1,0 +1,67 @@
+.body-class {
+    padding-bottom: 1000px;
+    margin: 0;
+    background-color: #2d5056;
+    color: white;
+    display: grid;
+    padding-left: 220px;
+    grid-template-columns: 185px 1fr;
+    font-family: system-ui;
+}
+nav {
+    position: sticky;
+    top: 0;
+    height: 1000px;
+    background-color: rgba(255, 255, 255, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+.nav-class {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 1rem;
+    padding-block: 2rem;
+    font-size: 1rem;
+}
+.nav-class li {
+    padding: 1rem 2rem;
+    margin-left: 2rem;
+    border-top-left-radius: 100vw;
+    border-bottom-left-radius: 100vw;
+}
+.nav-class li.active {
+    background-color: #2d5056;
+    position: relative;
+    view-transition-name: activenavTab;
+}
+::view-transition-group(activenavTab) {
+    animation-duration: 1.5s;
+}
+.nav-class a {
+    color: white;
+    text-decoration: none;
+}
+.nav-class li.active::before,
+.nav-class li.active::after {
+    content: '';
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    right: 0;
+}
+.nav-class li.active::before {
+    top: -1rem;
+    border-radius: 0 0 100vw 0;
+    box-shadow: 5px 5px 0 4px #2d5056;
+
+}
+.nav-class li.active::after {
+    bottom: -1rem;
+    border-radius: 0 100vw  0 0 ;
+    box-shadow: 5px -5px 0 4px #2d5056;
+    
+}
